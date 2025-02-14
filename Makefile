@@ -7,10 +7,10 @@ init:
 	pip install -r requirements.txt
 
 run:
-	FLASK_APP=src/app.py flask run --host=0.0.0.0 --port=5000
+	FLASK_APP=app.py flask run --host=0.0.0.0 --port=5000
 
 test:
-	PYTHONPATH=${PWD}/src pytest -v tests/
+	PYTHONPATH=${PWD} pytest -v .
 
 build:
 	docker build -t $(IMAGE_NAME):$(TAG) .
