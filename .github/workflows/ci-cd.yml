@@ -67,7 +67,9 @@ jobs:
       - name: Login to Azure using OIDC
         uses: azure/login@v2
         with:
-          enable-AzPSSession: true  # Active l'utilisation de Azure CLI/PowerShell si nécessaire
+          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_92EB7DB041F3421B9588A7E3B19F437E }}
+          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_7B4FEA4C73B14F80B5F41ACAA77954DD }}
+          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_D5A59D4AA5C44CF3891C26380193BC39 }} 
 
       - name: Deploy to Azure Web App
         uses: azure/webapps-deploy@v3
